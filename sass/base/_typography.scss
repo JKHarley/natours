@@ -3,13 +3,11 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
 }
 
 .heading-primary {
     color: $color-white;
     text-transform: uppercase;
-
     backface-visibility: hidden;
     margin-bottom: 6rem;
 
@@ -21,7 +19,12 @@ body {
     
         animation-name: moveInLeft;
         animation-duration: 1.5s;
-        animation-timing-function: ease-in-out;        
+        animation-timing-function: ease-in-out;
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
 
     &--sub {
@@ -32,12 +35,16 @@ body {
     
         animation-name: moveInRight;
         animation-duration: 1.5s;
-        animation-timing-function: ease-in-out;        
+        animation-timing-function: ease-in-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
 .heading-secondary {
-    font-size: 3.5rem; 
+    font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
@@ -47,6 +54,14 @@ body {
     color: transparent;
     letter-spacing: .2rem;
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);
